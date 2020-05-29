@@ -7,6 +7,18 @@
     <style>@media screen and (max-device-width:480px){body{-webkit-text-size-adjust:none}}</style>
     <script>
     window.onload = function() {
+
+        var req = new XMLHttpRequest();  
+        req.open('GET', 'maz-app://', true);  
+        req.send();  
+        if (req.status != "200") {
+            //  Error
+            window.location = 'https://apps.apple.com/de/app/meine-allianz/id1116091166';
+        } else {
+            window.location = 'maz-app://open';
+            
+        }
+/*
         try {
             console.log("Try to open the app")
             window.location = 'maz-app://open';
@@ -14,6 +26,8 @@
             console.log("Catch error, open appstore")
             setTimeout("window.location = 'https://apps.apple.com/de/app/meine-allianz/id1116091166';", 1000);
         }
+*/
+
     }
     </script>
 </head>
