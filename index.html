@@ -10,7 +10,7 @@
         try {
             console.log("Try to open the app")
             window.location = 'maz-app://open';
-        } catch {
+        } catch (e) {
             console.log("Catch error, open appstore")
             setTimeout("window.location = 'https://apps.apple.com/de/app/meine-allianz/id1116091166';", 1000);
         }
