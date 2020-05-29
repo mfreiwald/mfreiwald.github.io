@@ -1,60 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <title>mfreiwald</title>
-  </head>
-
-  <body>
-    <div id="container">
-      <div class="inner">
-
-        <header>
-          <h1>mfreiwald</h1>
-          <h2>iOS Developer</h2>
-        </header>
-        <!--
-        <section class="clearfix">
-          <a href="" class="button"><span>Link 1</span></a>
-          <a href="" class="button"><span>Link 2</span></a>
-        </section>
-        -->
-        <hr>
-
-
-        <section id="main_content">
-          <h3>Welcome</h3>
-
-          <h3>Projects</h3>
-            <p>
-              <a href="https://mfreiwald.github.io/FK07-iOS-App/">FK07-iOS-App</a><br>
-              iOS App for the Fakultät 07 at Hochschule München
-            </p>
-            <p>
-              <a href="https://www.github.com/mfreiwald/Ruthe-iOS-App/">Ruthe-iOS-App</a><br>
-              iOS App with Images from <a href="http://www.ruthe.de/">www.ruthe.de</a>
-            </p>
-
-          <h3>
-          <a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-          <p>Having troubles? Contact <a href="mailto:mail@mfreiwald.de">mail@mfreiwald.de</a> and i will help.</p>
-        </section>
-
-        <footer>
-          <a href="https://github.com/mfreiwald">© 2014 mfreiwald</a><br>
-        </footer>
-
-
-      </div>
-    </div>
-  </body>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0" />
+    <title>Site Name</title>
+    <style>@media screen and (max-device-width:480px){body{-webkit-text-size-adjust:none}}</style>
+ 
+    <!-- implement javascript on web page that first first tries to open the deep link
+        1. if user has app installed, then they would be redirected to open the app to specified screen
+        2. if user doesn't have app installed, then their browser wouldn't recognize the URL scheme
+        and app wouldn't open since it's not installed. In 1 second (1000 milliseconds) user is redirected
+        to download app from app store.
+     -->
+    <script>
+    window.onload = function() {
+    <!-- Deep link URL for existing users with app already installed on their device -->
+        window.location = 'maz-app://open';
+    <!-- Download URL (TUNE link) for new users to download the app -->
+        setTimeout("window.location = 'https://apps.apple.com/de/app/meine-allianz/id1116091166';", 1000);
+    }
+    </script>
+</head>
+<body>
+ 
+    <!-- button to Download App for new app users -->
+    <form action="https://apps.apple.com/de/app/meine-allianz/id1116091166" target="_blank">
+        <input type="submit" value="Download" />
+    </form>
+ 
+    <!-- button to Open App to specific screen for existing app users -->
+    <form action="maz-app://open" target="_blank">
+        <input type="submit" value="Open App" />
+    </form>
+ 
+</body>
 </html>
